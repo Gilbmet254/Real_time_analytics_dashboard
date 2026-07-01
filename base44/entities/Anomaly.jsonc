@@ -1,0 +1,54 @@
+{
+  "name": "Anomaly",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low"
+      ],
+      "default": "medium"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "acknowledged",
+        "resolved",
+        "dismissed"
+      ],
+      "default": "active"
+    },
+    "metric_name": {
+      "type": "string"
+    },
+    "expected_value": {
+      "type": "number"
+    },
+    "actual_value": {
+      "type": "number"
+    },
+    "stream_name": {
+      "type": "string"
+    },
+    "detected_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "title",
+    "severity",
+    "metric_name",
+    "stream_name"
+  ]
+}

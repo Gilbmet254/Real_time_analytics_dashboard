@@ -1,0 +1,43 @@
+{
+  "name": "QueryLog",
+  "type": "object",
+  "properties": {
+    "query_text": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "latency_ms": {
+      "type": "number"
+    },
+    "rows_scanned": {
+      "type": "number"
+    },
+    "rows_returned": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "failed",
+        "running",
+        "queued"
+      ],
+      "default": "completed"
+    },
+    "cache_hit": {
+      "type": "boolean",
+      "default": false
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "query_text",
+    "dataset"
+  ]
+}
